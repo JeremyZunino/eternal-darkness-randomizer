@@ -1,0 +1,211 @@
+# SPELLS
+
+haveRuneAntorbok:
+  %rune.antorbok
+
+haveRuneNarokath:
+  %rune.narokatk
+
+haveRuneBankorok:
+  %rune.bankorok
+
+haveRuneNethlek:
+  %rune.nethlek
+
+haveRuneTier:
+  %rune.tier
+
+haveRuneMagormor:
+  %rune.magormor
+
+haveRuneSantak:
+  %rune.santak
+
+haveRuneRedgormor:
+  %rune.redgormor
+
+haveRuneAretak:
+  %rune.aretak
+
+haveRunePargon:
+  %rune.pargon
+
+# WEAPONS
+
+haveFist:
+  Nothing
+
+haveGladius: # Pious
+  %item.gladius
+
+haveShortSword: # Ellia
+  %item.shortSword
+
+haveBlowgun: # Ellia
+  %item.blowgun
+
+haveScramasax: # Anthony
+  %item.scramasax
+
+haveTorch: # Anthony, Karim, Lindsey, Paul, Roberto, Peter
+  %item.Torch
+
+haveDoubleEdgedSword: # Anthony, Paul, Peter
+  %item.doubleEdgedSword
+
+haveTulwar: # Karim
+  %item.tulwar
+
+haveDualTulwar: # Karim
+  %item.dualTulwar
+
+haveRamDao: # Karim
+  %item.ramDao
+
+haveChakrams: # Karim
+  %item.chakrams
+
+haveSabre: # Max, Edward
+  %item.sabre
+
+haveFlintlockPistol: # Max
+  %item.flintlockPistol
+
+haveKukri: # Lindsey
+  %item.kukri
+
+haveAutomaticPistol: # Lindsey
+  %item.automaticPistol
+
+haveShotgun: # Lindsey, Alex
+  %item.shotgun
+
+haveMace: # Paul
+  %item.mace
+
+haveCrossbow: # Paul, Roberto
+  %item.crossbow
+
+haveSaif: # Roberto
+  %item.saif
+
+haveFlashPan: # Peter
+  %item.flashPan
+
+haveRevolver: # Peter, Edward
+  %item.revolver
+
+haveRifle: # Peter
+  %item.rifle
+
+haveDoubleShotgun: # Edward
+  %item.doubleShotgun
+
+haveElephantGun: # Edward
+  %item.elephantGun
+
+haveFireAx: # Michael
+  %item.fireAx
+
+havePistol: # Michael
+  %item.pistol
+
+haveAssaultRifle: # Alex
+  %item.assaultRifle
+
+haveGladius2: # Alex
+  %item.gladius2
+
+haveRevolver2: # Alex
+  %item.revolver2
+
+haveEnchantedGladius: # Alex
+  %item.enchantedGladius
+
+
+# SPELL : ENCHANT (1)
+
+canBeCreateSpellEnchant :
+  haveRuneAntorbok
+  & haveRuneMagormor
+
+canBeCreateSpellEnchant3:
+  canBeCreateSpellEnchant
+  & haveCircle3
+
+canBeCreateSpellEnchant5 :
+  canBeCreateSpellEnchant
+  & haveCircle5
+  & haveRunePargon
+
+canBeCreateSpellEnchant7 :
+  canBeCreateSpellEnchant
+  & haveCircle7
+  & haveRunePargon
+
+canBeUseSpellEnchantChatturgha3 :
+  canBeCreateSpellEnchant3
+  & haveRuneChatturgha
+
+canBeUseSpellEnchantChatturgha5 :
+  canBeCreateSpellEnchant5
+  & haveRuneChatturgha
+
+canBeUseSpellEnchantChatturgha7 :
+  canBeCreateSpellEnchant7
+  & haveRuneChatturgha
+
+canBeUseSpellEnchantXellolath3 :
+  canBeCreateSpellEnchant3
+  & haveRuneXellolath
+
+canBeUseSpellEnchantXellolath5 :
+  canBeCreateSpellEnchant5
+  & haveRuneXellolath
+
+canBeUseSpellEnchantXellolath7 :
+  canBeCreateSpellEnchant7
+  & haveRuneXellolath
+
+canBeUseSpellEnchantUlyaoth3 :
+  canBeCreateSpellEnchant3
+  & haveRuneUlyaoth
+
+canBeUseSpellEnchantUlyaoth5 :
+  canBeCreateSpellEnchant5
+  & haveRuneUlyaoth
+
+canBeUseSpellEnchantUlyaoth7 :
+  canBeCreateSpellEnchant7
+  & haveRuneUlyaoth
+
+canBeUseSpellEnchantMantorok3 :
+  canBeCreateSpellEnchant3
+  & haveRuneMantorok
+
+canBeUseSpellEnchantMantorok5 :
+  canBeCreateSpellEnchant5
+  & haveRuneMantorok
+
+canBeUseSpellEnchantMantorok7 :
+  canBeCreateSpellEnchant7
+  & haveRuneMantorok
+
+# SPELL : ENCHANT (2)
+# SPELL : REVEAL (3)
+# SPELL : DAMAGE FIELD (4)
+# SPELL : DISPEL (5)
+# SPELL : SUMMON TRAPPER (6)
+# SPELL : SHIELD (7)
+# SPELL : SUMMON ZOMBIE (8)
+# SPELL : MAGICAL ATTACK (9)
+# SPELL : SUMMON HORROR (10)
+# SPELL : MAGIC POOL (11)
+# SPELL : BIND (12)
+
+
+# HAVE WEAPON
+# can defeat 3 point monster
+# can defeat 5 points monster
+# can defeat 7 points monster
+# can defeat 9 points monster
