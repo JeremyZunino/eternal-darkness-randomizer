@@ -1,5 +1,17 @@
 # SPELLS
 
+haveRuneChattugha:
+  %rune.chatturgha
+
+haveRuneXellolath:
+  %rune.xellolath
+
+haveRuneUlyaoth:
+  %rune.ulyaoth
+
+haveRuneMantorok:
+  %rune.mantorok
+
 haveRuneAntorbok:
   %rune.antorbok
 
@@ -29,6 +41,9 @@ haveRuneAretak:
 
 haveRunePargon:
   %rune.pargon
+
+haveAnyGodRune:
+  haveRuneChattugha || haveRuneXellolath || haveRuneUlyaoth || haveRuneMantorok
 
 # WEAPONS
 
@@ -143,53 +158,65 @@ canBeCreateSpellEnchant7 :
   & haveCircle7
   & haveRunePargon
 
-canBeUseSpellEnchantChatturgha3 :
+canBeUseSpellEnchant3Chatturgha :
   canBeCreateSpellEnchant3
   & haveRuneChatturgha
 
-canBeUseSpellEnchantChatturgha5 :
+canBeUseSpellEnchant5Chatturgha :
   canBeCreateSpellEnchant5
   & haveRuneChatturgha
 
-canBeUseSpellEnchantChatturgha7 :
+canBeUseSpellEnchant7Chatturgha :
   canBeCreateSpellEnchant7
   & haveRuneChatturgha
 
-canBeUseSpellEnchantXellolath3 :
+canBeUseSpellEnchant3Xellolath :
   canBeCreateSpellEnchant3
   & haveRuneXellolath
 
-canBeUseSpellEnchantXellolath5 :
+canBeUseSpellEnchant5Xellolath :
   canBeCreateSpellEnchant5
   & haveRuneXellolath
 
-canBeUseSpellEnchantXellolath7 :
+canBeUseSpellEnchant7Xellolath :
   canBeCreateSpellEnchant7
   & haveRuneXellolath
 
-canBeUseSpellEnchantUlyaoth3 :
+canBeUseSpellEnchant3Ulyaoth :
   canBeCreateSpellEnchant3
   & haveRuneUlyaoth
 
-canBeUseSpellEnchantUlyaoth5 :
+canBeUseSpellEnchant5Ulyaoth :
   canBeCreateSpellEnchant5
   & haveRuneUlyaoth
 
-canBeUseSpellEnchantUlyaoth7 :
+canBeUseSpellEnchant7Ulyaoth :
   canBeCreateSpellEnchant7
   & haveRuneUlyaoth
 
-canBeUseSpellEnchantMantorok3 :
+canBeUseSpellEnchant3Mantorok :
   canBeCreateSpellEnchant3
   & haveRuneMantorok
 
-canBeUseSpellEnchantMantorok5 :
+canBeUseSpellEnchant5Mantorok :
   canBeCreateSpellEnchant5
   & haveRuneMantorok
 
-canBeUseSpellEnchantMantorok7 :
+canBeUseSpellEnchant7Mantorok :
   canBeCreateSpellEnchant7
   & haveRuneMantorok
+
+canBeUseSpellEnchant3AnyGod :
+  canBeCreateSpellEnchant3
+  & haveAnyGodRune
+
+canBeUseSpellEnchant5AnyGod :
+  canBeCreateSpellEnchant5
+  & haveAnyGodRune
+
+canBeUseSpellEnchant7AnyGod :
+  canBeCreateSpellEnchant7
+  & haveAnyGodRune
 
 # SPELL : ENCHANT (2)
 # SPELL : REVEAL (3)

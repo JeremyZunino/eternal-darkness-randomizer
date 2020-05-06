@@ -1,0 +1,35 @@
+gladius:
+  chapter: Pious
+  type: weapon
+  need: nothing
+  location: startWith
+  address: --------
+
+redGraniteBlock:
+  chapter: Pious
+  type: item
+  need: nothing
+  location: Room:rmed0342.bpe
+  address: --------
+
+greenGraniteBlock:
+  chapter: Pious
+  type: item
+  need: nothing
+  location: Room:rmed0343.bpe
+  address: --------
+
+blueGraniteBlock:
+  chapter: Pious
+  type: item
+  need: nothing
+  location: Room:rmed0344.bpe
+  address: --------
+
+purpleGraniteBlock:
+  chapter: Pious
+  type: item
+  need: nothing
+  location: Room:rmed0183.bpe
+  address: --------
+
