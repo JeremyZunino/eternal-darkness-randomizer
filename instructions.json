@@ -1,34 +1,90 @@
 {
-
-  "add": {
-    "name": "add",
-    "compose": [
-      { "name":"type", "size": 6, "constant":"101100" },
-      { "name":"S"   , "size": 5, "constant":false    },
-      { "name":"A"   , "size": 5, "constant":false    },
-      { "name":"p1"  , "size":16, "constant":false    },
-    ],
-    "pattern": "rS,d(rA)"
+  "refs" : {
+    "000011": [ "twi" ],
+    "000100": [ "ps_cmpu0", "psq_lx", "psq_stx", "ps_sum0", "ps_sum1", "ps_muls0", "ps_muls1", "ps_madds0", "ps_madds1", "ps_div", "ps_sub", "ps_add", "ps_sel", "ps_res", "ps_mul", "ps_rsqrte", "ps_msub", "ps_madd", "ps_nmsub", "ps_nmadd", "ps_cmpo0", "psq_lux", "psq_stux", "ps_neg", "ps_cmpu1", "ps_mr", "ps_cmpo1", "ps_nabs", "ps_abs", "ps_merge00", "ps_merge01", "ps_merge10", "ps_merge11", "dcbz_l" ],
+    "000111": [ "mulli" ],
+    "001000": [ "subfic" ],
+    "001010": [ "cmpli" ],
+    "001011": [ "cmpi" ],
+    "001100": [ "addic" ],
+    "001101": [ "addic." ],
+    "001110": [ "addi" ],
+    "001111": [ "addis" ],
+    "010000": [ "bc" ],
+    "010001": [ "sc" ],
+    "010010": [ "b" ],
+    "010011": [ "mcrf", "bclr", "crnor", "rfi", "crandc", "isync", "crxor", "crnand", "crand", "creqv", "crorc", "cror", "bcctrx" ],
+    "010101": [ "rlwinm" ],
+    "010111": [ "rlwnm" ],
+    "011000": [ "ori" ],
+    "011001": [ "oris" ],
+    "011011": [ "xoris" ],
+    "011100": [ "andi." ],
+    "011101": [ "andis" ],
+    "011111": [ "cmp", "tw", "subfc", "addc", "mulhwu", "mfcr", "lwarx", "lwzx", "slw", "cntlzw", "and", "cmpl", "subf", "dcbst", "lwzux", "andc", "mulhw", "mfmsr", "dcbf", "lbzx", "neg", "lbzux", "nor", "subfe", "adde", "mtcrf", "mtmsr", "stwc", "stwx", "stwux", "subfze", "addze", "mtsr", "stbx", "subfme", "addme", "mullw", "mtsrin", "dcbtst", "stbux", "add", "dcbt", "lhzx", "eqv", "tlbie", "eciwx", "lhzux", "xor", "mfspr", "lhax", "mftb", "lhaux", "sthx", "orc", "ecowx", "sthux", "or", "divwu", "mtspr", "dcbi", "nand", "divw", "mcrxr", "lswx", "lwbrx", "lfsx", "srw", "tlbsync", "lfsux", "mfsr", "lswi", "sync", "lfdx", "lfdux", "mfsrin", "stswx", "stwbrx", "stfsx", "stfsux", "stswi", "stfdx", "stfdux", "lhbrx", "sraw", "srawi", "eieio", "sthbrx", "extsh", "extsb", "icbi", "stfiwx", "dcbz" ],
+    "100000": [ "lwz" ],
+    "100001": [ "lwzu" ],
+    "100010": [ "lbz" ],
+    "100011": [ "lbzu" ],
+    "100100": [ "stw" ],
+    "100101": [ "stwu" ],
+    "100110": [ "stb" ],
+    "100111": [ "stbu" ],
+    "101000": [ "lhz" ],
+    "101001": [ "lhzu" ],
+    "101010": [ "lha" ],
+    "101011": [ "lhau" ],
+    "101100": [ "sth" ],
+    "101101": [ "sthu" ],
+    "101110": [ "lmw" ],
+    "101111": [ "stmw" ],
+    "110000": [ "lfs" ],
+    "110001": [ "lfsu" ],
+    "110010": [ "lfd" ],
+    "110011": [ "lfdu" ],
+    "110100": [ "stfs" ],
+    "110101": [ "stfsu" ],
+    "110110": [ "stfd" ],
+    "110111": [ "stfdu" ],
+    "111000": [ "psq_l" ],
+    "111001": [ "psq_lu" ],
+    "111011": [ "fdivs", "fsubs", "fadds", "fres", "fmuls", "fmsubs", "fmadds", "fnmsubs", "fnmadds" ],
+    "111100": [ "psq_st" ],
+    "111101": [ "psq_stu" ],
+    "111111": [ "fcmpu", "frsp", "fctiw", "fctiwz", "fdiv", "fsub", "fadd", "fsel", "fmul", "frsqrte", "fmsub", "fmadd", "fnmsub", "fnmadd", "fcmpo", "mtfsb1", "fneg", "mcrfs", "mtfsb0", "fmr", "mtfsfi", "fnabs", "fabs", "mffs", "mtfsf" ]
   },
 
-  "sth": {
-    "name": "add",
-    "variants": {
-      "add"  : { "OE":0, "Rc":0 },
-      "add." : { "OE":0, "Rc":1 },
-      "addo" : { "OE":1, "Rc":0 },
-      "addo.": { "OE":1, "Rc":1 }
+  "instructions" : {
+    "add": {
+      "name": "add",
+      "compose": [
+        { "name":"type", "size": 6, "constant":"101100" },
+        { "name":"S"   , "size": 5, "constant":false    },
+        { "name":"A"   , "size": 5, "constant":false    },
+        { "name":"p1"  , "size":16, "constant":false    }
+      ],
+      "pattern": "rS,d(rA)"
     },
-    "compose": [
-      { "name":"type", "size": 6, "constant":"011111"    },
-      { "name":"D"   , "size": 5, "constant":false       },
-      { "name":"A"   , "size": 5, "constant":false       },
-      { "name":"B"   , "size": 5, "constant":false       },
-      { "name":"OE"  , "size": 1, "constant":false       },
-      { "name":"cst1", "size": 9, "constant":"100001010" },
-      { "name":"Rc"  , "size": 1, "constant":false       }
-    ],
-    "pattern": "rD,rA,rB"
+
+    "sth": {
+      "name": "add",
+      "variants": {
+        "add"  : { "OE":0, "Rc":0 },
+        "add." : { "OE":0, "Rc":1 },
+        "addo" : { "OE":1, "Rc":0 },
+        "addo.": { "OE":1, "Rc":1 }
+      },
+      "compose": [
+        { "name":"type", "size": 6, "constant":"011111"    },
+        { "name":"D"   , "size": 5, "constant":false       },
+        { "name":"A"   , "size": 5, "constant":false       },
+        { "name":"B"   , "size": 5, "constant":false       },
+        { "name":"OE"  , "size": 1, "constant":false       },
+        { "name":"cst1", "size": 9, "constant":"100001010" },
+        { "name":"Rc"  , "size": 1, "constant":false       }
+      ],
+      "pattern": "rD,rA,rB"
+    }
   }
 
 }
