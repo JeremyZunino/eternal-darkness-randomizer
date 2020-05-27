@@ -55,18 +55,22 @@
   },
 
   "instructions" : {
-    "add": {
-      "name": "add",
-      "compose": [
-        { "name":"type", "size": 6, "constant":"101100" },
-        { "name":"S"   , "size": 5, "constant":false    },
-        { "name":"A"   , "size": 5, "constant":false    },
-        { "name":"p1"  , "size":16, "constant":false    }
-      ],
-      "pattern": "rS,d(rA)"
+    "lwz": {
+      "name": "lwz",
+      "label": "Load Word and Zero",
+      "components": [ "c:6:type:100000", "r:5:rD", "r:5:rA", "v:16:d" ],
+      "pattern": "rD, d (rA)"
+    },
+    "sth": {
+      "name": "sth",
+      "label": "Store Half Word",
+      "components": [ "c:6:type:101100", "r:5:rS", "r:5:rA", "v:16:d" ],
+      "pattern": "rS, d (rA)"
     },
 
-    "sth": {
+
+
+    "add": {
       "name": "add",
       "variants": {
         "add"  : { "OE":0, "Rc":0 },
@@ -75,13 +79,13 @@
         "addo.": { "OE":1, "Rc":1 }
       },
       "compose": [
-        { "name":"type", "size": 6, "constant":"011111"    },
-        { "name":"D"   , "size": 5, "constant":false       },
-        { "name":"A"   , "size": 5, "constant":false       },
-        { "name":"B"   , "size": 5, "constant":false       },
-        { "name":"OE"  , "size": 1, "constant":false       },
-        { "name":"cst1", "size": 9, "constant":"100001010" },
-        { "name":"Rc"  , "size": 1, "constant":false       }
+        { "name":"type", "type":"c", "size": 6, "constant":"011111"    },
+        { "name":"D"   , "type":"r", "size": 5, "constant":false       },
+        { "name":"A"   , "type":"r", "size": 5, "constant":false       },
+        { "name":"B"   , "type":"v", "size": 5, "constant":false       },
+        { "name":"OE"  , "type":"v", "size": 1, "constant":false       },
+        { "name":"cst1", "type":"c", "size": 9, "constant":"100001010" },
+        { "name":"Rc"  , "type":"v", "size": 1, "constant":false       }
       ],
       "pattern": "rD,rA,rB"
     }

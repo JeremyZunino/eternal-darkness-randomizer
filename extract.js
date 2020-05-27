@@ -16,16 +16,17 @@ let line      = 0;
 let search = {
     // type : "byte_instruction",
     // value: "b38300e6",
+    // type : "line",
+    // value: [ 84497 , 84498 , 84499 ]
+    // type : "byte_instruction",
+    // value: [ "481c90a9" ],
     type : "line",
-    value: [ 84497 , 84498 , 84499 ]
+    value: [ 84493, 84494, 84495, 84496 , 84497 , 84498 , 84499 ]
 };
 
-let inst = new Instruction().fromHex("b38300e2");
-console.log( inst.parseStr() );
-
-// console.log( instructionHaveMask( "b845127a" , instructionMasks.sth ) );
-// console.log( instructionHaveMask( "a845127a" , instructionMasks.sth ) );
-// console.log( findInstruction( "b845127a" ) );
+// let hex = "b38300e2";
+// let inst = new Instruction().fromHex(hex);
+// console.log( hex + " => " + inst.parseToString() );
 
 http.createServer(function(req, res) {
 
@@ -45,7 +46,7 @@ http.createServer(function(req, res) {
         while( i < data.length )
         {
             let instructionHex  = decToHex(data[i]) + decToHex(data[i+1]) + decToHex(data[i+2]) + decToHex(data[i+3]) ;
-            let instructionName = findInstruction( instructionHex );
+            let display = false;
 
             switch( search.type ) {
                 case "byte_instruction":
@@ -54,7 +55,7 @@ http.createServer(function(req, res) {
                         ( typeof search.value === "object" && search.value.indexOf(instructionHex) > -1 )
                         || instructionHex === search.value
                     ) {
-                        console.log( line , instructionHex , instructionName );
+                        display = true;
                     }
                     break;
 
@@ -64,11 +65,16 @@ http.createServer(function(req, res) {
                         ( typeof search.value === "object" && search.value.indexOf(line) > -1 )
                         || line === search.value
                     ) {
-                        console.log( line , instructionHex , instructionName );
+                        display = true;
                     }
                     break;
-
             }
+
+            if( display ) {
+                let inst = new Instruction().fromHex(instructionHex);
+                console.log( "(" + line + ") " + instructionHex + " => " + inst.parseToString() );
+            }
+
             line++;
             i += 4;
         }
