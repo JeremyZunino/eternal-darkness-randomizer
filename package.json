@@ -4,7 +4,8 @@
   "description": "",
   "main": "randomizer.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "extract": "nodemon extract.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,9 @@
   },
   "homepage": "https://github.com/JeremyZunino/eternal-darkness-randomizer#readme",
   "dependencies": {
-    "gcmisoparser": "^1.0.3"
+    "nodemon": "^2.0.4",
+    "gcmisoparser": "^1.0.3",
+    "binary-parser": "^1.3.2",
+    "file-type": "^14.3.0"
   }
 }

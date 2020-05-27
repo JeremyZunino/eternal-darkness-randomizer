@@ -1,0 +1,34 @@
+{
+
+  "add": {
+    "name": "add",
+    "compose": [
+      { "name":"type", "size": 6, "constant":"101100" },
+      { "name":"S"   , "size": 5, "constant":false    },
+      { "name":"A"   , "size": 5, "constant":false    },
+      { "name":"p1"  , "size":16, "constant":false    },
+    ],
+    "pattern": "rS,d(rA)"
+  },
+
+  "sth": {
+    "name": "add",
+    "variants": {
+      "add"  : { "OE":0, "Rc":0 },
+      "add." : { "OE":0, "Rc":1 },
+      "addo" : { "OE":1, "Rc":0 },
+      "addo.": { "OE":1, "Rc":1 }
+    },
+    "compose": [
+      { "name":"type", "size": 6, "constant":"011111"    },
+      { "name":"D"   , "size": 5, "constant":false       },
+      { "name":"A"   , "size": 5, "constant":false       },
+      { "name":"B"   , "size": 5, "constant":false       },
+      { "name":"OE"  , "size": 1, "constant":false       },
+      { "name":"cst1", "size": 9, "constant":"100001010" },
+      { "name":"Rc"  , "size": 1, "constant":false       }
+    ],
+    "pattern": "rD,rA,rB"
+  }
+
+}
